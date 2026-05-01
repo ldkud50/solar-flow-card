@@ -1,0 +1,10 @@
+{
+	"name": "Solar Flow Card",
+	"description": "Animated solar power flow card for Home Assistant.",
+	"render_readme": true,
+	"domains": [
+		"lovelace"
+	],
+	"content_in_root": false,
+	"filename": "solar-flow-card.js"
+}
