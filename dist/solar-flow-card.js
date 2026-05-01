@@ -120,14 +120,14 @@ class SolarFlowCard extends HTMLElement {
   _statButton(entityId, label, color, icon) {
     const val = this._fmtStat(entityId);
     const C   = color;
-    const sc  = this._config.font_scale || 1;
-    const sz  = Math.round(16 * sc);
     return `
       <div class="stat-btn" style="border-color:${C};background:${C}14;">
         <div class="stat-shimmer" style="background:linear-gradient(90deg,transparent,${C}80,transparent)"></div>
-        <svg viewBox="0 0 24 24" width="14" height="14" style="flex-shrink:0"><path d="${icon}" fill="${C}"/></svg>
-        <div class="stat-val" style="color:${C}">${val}</div>
-        <div class="stat-lbl">${label}</div>
+        <svg viewBox="0 0 24 24" width="28" height="28" style="flex-shrink:0"><path d="${icon}" fill="${C}"/></svg>
+        <div class="stat-text">
+          <div class="stat-val" style="color:${C}">${val}</div>
+          <div class="stat-lbl">${label}</div>
+        </div>
       </div>
     `;
   }
@@ -244,17 +244,18 @@ class SolarFlowCard extends HTMLElement {
         .stats{padding:3px 3px 5px;display:flex;flex-direction:column;gap:3px;background:rgba(0,0,0,0.3);}
         .stats-row{display:flex;gap:3px;}
         .stat-btn{
-          flex:1;border-radius:8px;border:1px solid;
-          padding:6px 3px 5px;display:flex;flex-direction:column;
-          align-items:center;justify-content:center;gap:3px;position:relative;overflow:hidden;
-          box-sizing:border-box;min-width:0;min-height:70px;
+          flex:1;border-radius:12px;border:1px solid;
+          padding:6px 6px 6px 14px;display:flex;flex-direction:row;
+          align-items:center;gap:8px;position:relative;overflow:hidden;
+          box-sizing:border-box;min-width:0;height:80px;
         }
+        .stat-text{display:flex;flex-direction:column;gap:2px;min-width:0;}
         .stat-shimmer{
           position:absolute;top:0;left:0;right:0;height:1px;
           animation:shimmer 2.5s linear infinite;pointer-events:none;
         }
-        .stat-val{font-size:${0.7 * sc}em;font-weight:700;font-family:var(--primary-font-family,sans-serif);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
-        .stat-lbl{font-size:${0.58 * sc}em;color:rgba(255,255,255,0.65);font-family:var(--primary-font-family,sans-serif);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
+        .stat-val{font-size:${0.82 * sc}em;font-weight:700;font-family:var(--primary-font-family,sans-serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .stat-lbl{font-size:${0.72 * sc}em;color:rgba(255,255,255,0.7);font-family:var(--primary-font-family,sans-serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
       </style>
       <div class="wrap">
         <div class="flow">
