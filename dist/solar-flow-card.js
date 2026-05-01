@@ -245,9 +245,9 @@ class SolarFlowCard extends HTMLElement {
         .stats-row{display:flex;gap:3px;}
         .stat-btn{
           flex:1;border-radius:8px;border:1px solid;
-          padding:5px 3px 4px;display:flex;flex-direction:column;
-          align-items:center;gap:2px;position:relative;overflow:hidden;
-          box-sizing:border-box;min-width:0;
+          padding:6px 3px 5px;display:flex;flex-direction:column;
+          align-items:center;justify-content:center;gap:3px;position:relative;overflow:hidden;
+          box-sizing:border-box;min-width:0;min-height:70px;
         }
         .stat-shimmer{
           position:absolute;top:0;left:0;right:0;height:1px;
