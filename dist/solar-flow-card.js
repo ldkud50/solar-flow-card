@@ -123,10 +123,10 @@ class SolarFlowCard extends HTMLElement {
     return `
       <div class="stat-btn" style="border-color:${C};background:${C}14;">
         <div class="stat-shimmer" style="background:linear-gradient(90deg,transparent,${C}80,transparent)"></div>
-        <svg viewBox="0 0 24 24" width="28" height="28" style="flex-shrink:0"><path d="${icon}" fill="${C}"/></svg>
+        <div class="stat-icon"><svg viewBox="0 0 24 24" width="28" height="28"><path d="${icon}" fill="${C}"/></svg></div>
         <div class="stat-text">
           <div class="stat-val" style="color:${C}">${val}</div>
-          <div class="stat-lbl">${label}</div>
+          <div class="stat-lbl" style="color:${C}">${label}</div>
         </div>
       </div>
     `;
@@ -246,16 +246,17 @@ class SolarFlowCard extends HTMLElement {
         .stat-btn{
           flex:1;border-radius:12px;border:1px solid;
           padding:6px 6px 6px 14px;display:flex;flex-direction:row;
-          align-items:center;gap:8px;position:relative;overflow:hidden;
+          align-items:center;gap:10px;position:relative;overflow:hidden;
           box-sizing:border-box;min-width:0;height:80px;
         }
-        .stat-text{display:flex;flex-direction:column;gap:2px;min-width:0;}
+        .stat-icon{flex-shrink:0;display:flex;align-items:center;}
+        .stat-text{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1;}
         .stat-shimmer{
           position:absolute;top:0;left:0;right:0;height:1px;
           animation:shimmer 2.5s linear infinite;pointer-events:none;
         }
         .stat-val{font-size:${0.82 * sc}em;font-weight:700;font-family:var(--primary-font-family,sans-serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-        .stat-lbl{font-size:${0.72 * sc}em;color:rgba(255,255,255,0.7);font-family:var(--primary-font-family,sans-serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .stat-lbl{font-size:${0.6 * sc}em;color:rgba(255,255,255,0.7);font-weight:600;font-family:var(--primary-font-family,sans-serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:0.3px;}
       </style>
       <div class="wrap">
         <div class="flow">
