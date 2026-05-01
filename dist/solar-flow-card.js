@@ -125,7 +125,7 @@ class SolarFlowCard extends HTMLElement {
     return `
       <div class="stat-btn" style="border-color:${C};background:${C}14;">
         <div class="stat-shimmer" style="background:linear-gradient(90deg,transparent,${C}80,transparent)"></div>
-        <svg viewBox="0 0 24 24" width="${sz}" height="${sz}" style="flex-shrink:0"><path d="${icon}" fill="${C}"/></svg>
+        <svg viewBox="0 0 24 24" width="14" height="14" style="flex-shrink:0"><path d="${icon}" fill="${C}"/></svg>
         <div class="stat-val" style="color:${C}">${val}</div>
         <div class="stat-lbl">${label}</div>
       </div>
